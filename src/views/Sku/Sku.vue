@@ -9,7 +9,7 @@ let pathMap = {}
 const getGoods = async () => {
   // 1135076  初始化就有無庫存的規格
   // 1369155859933827074 更新之後有無庫存項（藍色-20cm-中國）
-  const res = await axios.get('http://pcapi-xiaotuxian-front-devtest.itheima.net/goods?id=1369155859933827074')
+  const res = await axios.get('https://pcapi-xiaotuxian-front-devtest.itheima.net/goods?id=1369155859933827074')
   // const res = await axios.get('http://pcapi-xiaotuxian-front-devtest.itheima.net/goods?id=1135076')
   goods.value = res.data.result
   pathMap = getPathMap(goods.value)
