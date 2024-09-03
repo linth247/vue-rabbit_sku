@@ -35,7 +35,23 @@ const changeSelectedStatus = (item, val) => {
   }
   // const arr = getSelectedValues(goods.value.specs)
   // console.log(arr)
+  // 點擊按鈕時更新
   updateDisabledStatus(goods.value.specs, pathMap)
+  // 產出SKU對象數據
+  const index = getSelectedValues(goods.value.specs).findIndex(item => item === undefined)
+  if(index > -1) {
+    console.log('找到了，信息不完整')
+  }else{
+    console.log('沒有找到，信息完整，可以產出')
+    // 獲取sku對象
+    const key = getSelectedValues(goods.value.specs).join('-')
+    console.log(key)
+    const skuIds = pathMap[key]
+    console.log(skuIds)
+    // 以skuId作為匹配項去goods.value.skus數組中找
+    const skuObj = goods.value.skus.find(item => item.id === skuIds[0])
+    console.log('sku對象為', skuObj)
+  }
 }
 
 // 生成有效路徑字典(2)
