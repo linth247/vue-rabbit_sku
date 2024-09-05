@@ -10,6 +10,8 @@ const httpInstance = axios.create({
  timeout: 5000
 })
 
+
+
 // 攔截器
 // axios请求攔截器
 httpInstance.interceptors.request.use(config => {
